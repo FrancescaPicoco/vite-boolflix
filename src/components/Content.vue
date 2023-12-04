@@ -18,7 +18,7 @@ nome :"Content",
 		getFilms(){
 			axios.get(`${this.store.apiCall}${this.store.key}query=${this.store.searchedFilm}`).then(r=>{
 				console.log(r.data.results , "ecco i risultati della chiamata")
-		        this.store.filmCard = r.data
+		        this.store.filmCard = r.data.results
                 console.log(this.store.filmCard,"ecco le cards dei film cercati")
 			});
 		}
