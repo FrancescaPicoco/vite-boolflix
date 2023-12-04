@@ -23,7 +23,7 @@ export default {
 				console.log(r.data)
 		        this.store.filmCard = r.data
 			});
-		},	
+		},
 	}
 }
 </script>

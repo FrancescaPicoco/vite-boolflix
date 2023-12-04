@@ -13,7 +13,7 @@ export default {
 <template>
 <div class="searchContainer">
     <input type="text" placeholder="search" v-model="store.searchedFilm"  @keyup.enter="$emit('search')">
-    <button @click="search">search</button>
+    <button @click="$emit('search')">search</button>
 </div>
 </template>
 
