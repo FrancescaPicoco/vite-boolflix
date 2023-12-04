@@ -1,28 +1,14 @@
 <script>
-import AppSearch from './AppSearch.vue'
-import axios from 'axios';
-import { store } from "../store.js"
-
 export default{
     components:{
-        AppSearch
 },
-    nome :"Header",
+    nome :"AppHeader",
     data(){
         return{
-            store,
             links : [],
             logo : "BOOLFLIX" 
         }
     },
-    methods: {
-		getFilms(){
-			axios.get(`${this.store.apiCall}${this.store.key}query=${this.store.searchedFilm}`).then(r=>{
-				console.log(r.data , "ecco i risultati della chiamata")
-		        this.store.filmCard = r.data
-			});
-		}
-    }	
 }
 </script>
 
@@ -32,7 +18,7 @@ export default{
             <section>
                <h1>{{ this.logo }}</h1>
                <div class="navbar-cont">
-                <AppSearch @search="getFilms()"/>
+                
                   <!-- <Navbar v-for="link in links" href="link.address" :menulinks="link"/> -->
                </div>          
             </section>
