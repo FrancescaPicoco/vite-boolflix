@@ -15,12 +15,27 @@ export default{
         <p>{{ details.title }}</p>      
     </div>  
 </template>
+<!-- <div class="flip-card">
+    <div class="cardInner">
+      <div class="Front">
+        <img>
+      </div>
+      <div class="flip-card-back">
+        <h3>{{ details.original_title}}</h3>
+        <p>{{ details.original_language }}</p> 
+        <p>{{ details.overview }}</p>
+        <p>{{ details.popularity }}</p>
+        <p>{{ details.release_date }}</p>
+        <p>{{ details.title }}</p>  
+      </div>
+    </div>
+  </div> -->
 
 <style scoped>
    .card{
-    width: calc((100% / 5) - 3rem);
+    width: calc((100% / 3) - 3rem);
     margin: 1.5rem;
-    background-color: slategray;
+    background-color: rgba(112, 128, 144, 0.582);
     color: black;
    }
    img{

@@ -29,8 +29,12 @@ nome :"Content",
 
 <template>
     <div id="wrapper">
-        <AppSearch @search="getFilms()"/> 
-        <AppCard  v-for="film in this.store.filmCard" :details="film"/>      
+        <div class="searchbar">
+           <AppSearch @search="getFilms()"/>
+        </div>
+        <div class="wrappercard">
+            <AppCard  v-for="film in this.store.filmCard" :details="film"/>
+        </div>           
     </div>
 
 </template>
@@ -45,4 +49,12 @@ nome :"Content",
     padding: 3rem;
     background-color: rgb(45, 13, 76);
 } 
+.wrappercard{
+    display: flex;
+    flex-wrap: wrap;
+}
+.searchbar{
+    margin-left: auto;
+    margin-right: auto;
+}
 </style>
