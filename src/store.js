@@ -16,6 +16,7 @@ export const store = reactive({
         jp:"img/jp.png" ,
         no:"img/no.png"
     },
+    flagsArray : ['cn','de','fi','fr','gb','it','jp','no'],
     apiCallSerieTv: "https://api.themoviedb.org/3/search/tv?api_key=",
     imgUrl: "https://image.tmdb.org/t/p/w342",
 

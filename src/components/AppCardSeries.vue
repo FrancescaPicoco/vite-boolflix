@@ -9,7 +9,20 @@ export default {
 		return {
 			store,
 		}
-  }
+   },
+   methods: {
+        getVote(n) {
+            return Math.ceil(n / 2)
+        }
+    }
+//    methods : {
+//     check(){
+//         if (flagsArray.includes.detailsSeries.original_language){
+            
+//         }
+//     }
+
+//    }
 }
 </script>
 
@@ -21,14 +34,17 @@ export default {
       <h1 v-else>Copertina non disponibile</h1>
     </div>
     <div class="Back">
-        <h3>{{ details.original_title}}</h3>
+        <h3>{{ detailsSeries.original_name}}</h3>
         <p>{{ detailsSeries.original_language }}</p> 
+        <p>{{ detailsSeries.title }}</p>
         <p>{{ detailsSeries.overview }}</p>
         <p>{{ detailsSeries.popularity }}</p>
         <p>{{ detailsSeries.release_date }}</p>
-        <p>{{ detailsSeries.title }}</p>  
-    </div>
+        <p>{{ detailsSeries.vote_average }}</p>
+        <p>{{ detailsSeries.popularity }}</p>
+        <p>{{ detailsSeries.vote_count }}</p>
   </div>
+</div>
 </div>
 </template>
 <style scoped>

@@ -44,6 +44,7 @@ nome :"Content",
             <AppCard v-for="film in this.store.filmCard" :details="film"/>
         </div>
         <div class="wrappercard">
+            <h1>SERIE TV</h1>
             <AppCardSeries v-for="serie in store.seriesCard" :detailsSeries="serie"/>
         </div>            
     </div>
