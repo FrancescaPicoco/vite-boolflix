@@ -1,8 +1,8 @@
 <script>
 import { store } from "../store.js"
 export default {
-  name: "AppCard",
-    props: ["details"],
+  name: "AppCardSeries",
+    props: ["detailsSeries"],
 	components: {
 	},
 	data() {
@@ -17,16 +17,16 @@ export default {
 <div class="card">
   <div class="cardInner">
     <div class="Front">
-      <img v-if="details.poster_path" :src= "store.imgUrl + details.poster_path" alt="LOCANDINA">
+      <img v-if="detailsSeries.poster_path" :src= "store.imgUrl + detailsSeries.poster_path" alt="LOCANDINA">
       <h1 v-else>Copertina non disponibile</h1>
     </div>
     <div class="Back">
         <h3>{{ details.original_title}}</h3>
-        <p>{{ details.original_language }}</p> 
-        <p>{{ details.overview }}</p>
-        <p>{{ details.popularity }}</p>
-        <p>{{ details.release_date }}</p>
-        <p>{{ details.title }}</p>  
+        <p>{{ detailsSeries.original_language }}</p> 
+        <p>{{ detailsSeries.overview }}</p>
+        <p>{{ detailsSeries.popularity }}</p>
+        <p>{{ detailsSeries.release_date }}</p>
+        <p>{{ detailsSeries.title }}</p>  
     </div>
   </div>
 </div>

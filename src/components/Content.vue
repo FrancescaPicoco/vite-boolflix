@@ -1,12 +1,14 @@
 <script>
 import AppSearch from './AppSearch.vue'
 import AppCard from './AppCard.vue'
+import AppCardSeries from './AppCardSeries.vue';
 import axios from 'axios';
 import { store } from "../store.js"
 export default{
     components:{
         AppSearch,
-        AppCard
+        AppCard,
+        AppCardSeries
 },
 nome :"Content",
     data(){
@@ -16,12 +18,18 @@ nome :"Content",
     },
     methods: {
 		getFilms(){
-			axios.get(`${this.store.apiCall}${this.store.key}query=${this.store.searchedFilm}`).then(r=>{
+			const film = axios.get(`${this.store.apiCall}${this.store.key}query=${this.store.searchedFilm}`).then(r=>{
 				console.log(r.data.results , "ecco i risultati della chiamata")
 		        this.store.filmCard = r.data.results
-                console.log(this.store.filmCard,"ecco le cards dei film cercati")
+                console.log(r.data.results , "ECCO I FILM")
+
 			});
-		}
+            const series = axios.get(`${this.store.apiCallSerieTv}${this.store.key}query=${this.store.searchedFilm}`).then(r=>{
+				console.log(r.data)
+		        this.store.seriesCard = r.data.results
+                console.log(r.data.results, "ECCO LE SERIE")
+			});
+		},
     }	
 }
 
@@ -30,11 +38,14 @@ nome :"Content",
 <template>
     <div id="wrapper">
         <div class="searchbar">
-           <AppSearch @search="getFilms()"/>
+           <AppSearch @search="getFilms()" />
         </div>
         <div class="wrappercard">
-            <AppCard  v-for="film in this.store.filmCard" :details="film"/>
-        </div>           
+            <AppCard v-for="film in this.store.filmCard" :details="film"/>
+        </div>
+        <div class="wrappercard">
+            <AppCardSeries v-for="serie in store.seriesCard" :detailsSeries="serie"/>
+        </div>            
     </div>
 
 </template>
@@ -42,6 +53,7 @@ nome :"Content",
 <style scoped>
 #wrapper{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     width: 80vw;
     margin-right: auto;

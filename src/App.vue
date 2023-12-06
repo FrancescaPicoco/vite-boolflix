@@ -14,17 +14,6 @@ export default {
 			store,
 		}
 	},
-  mounted() {
-		this.getFilms();
-	},
-    methods: {
-		getFilms(){
-			axios.get(`${this.store.apiCall}${this.store.key}query=${this.store.searchedFilm}`).then(r=>{
-				console.log(r.data)
-		        this.store.filmCard = r.data
-			});
-		},
-	}
 }
 </script>
 
@@ -33,5 +22,8 @@ export default {
    <Content />
 </template>
 
+<style lang="scss">
+@use './styles/general.scss';
+</style>
 <style scoped>
 </style>
